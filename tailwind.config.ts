@@ -1,92 +1,79 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
         primary: {
-          50: '#eef7ff',
-          100: '#d8ecff',
-          200: '#b9deff',
-          300: '#89cbff',
-          400: '#52aeff',
-          500: '#2a8bff',
-          600: '#0d6bf5',
-          700: '#0654e1',
-          800: '#0b44b6',
-          900: '#103c8f',
-          950: '#0d2657',
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
         },
         accent: {
-          cyan: '#00d4ff',
-          purple: '#a855f7',
-          pink: '#ec4899',
+          cyan: '#06b6d4',
+          teal: '#14b8a6',
           blue: '#3b82f6',
         },
         dark: {
-          50: '#f6f6f7',
-          100: '#e2e3e5',
-          200: '#c4c6cb',
-          300: '#9fa2a9',
-          400: '#7a7e87',
-          500: '#5f636c',
-          600: '#4b4e56',
-          700: '#3e4047',
-          800: '#35373c',
-          900: '#1a1b1e',
-          950: '#0d0e10',
+          900: '#0a0a0a',
+          800: '#171717',
+          700: '#262626',
+          600: '#404040',
+          500: '#525252',
+        },
+        gray: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'hero-gradient': 'linear-gradient(135deg, #0d0e10 0%, #1a1b2e 25%, #0d1f3c 50%, #1a0d2e 75%, #0d0e10 100%)',
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
+        'marquee': 'marquee 25s linear infinite',
+        'marquee2': 'marquee2 25s linear infinite',
         'float': 'float 6s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
-        'slide': 'slide 30s linear infinite',
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'gradient': 'gradient 8s ease infinite',
-        'shimmer': 'shimmer 2s linear infinite',
       },
       keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        marquee2: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(0, 212, 255, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(0, 212, 255, 0.6)' },
+          '0%': { boxShadow: '0 0 20px rgba(6, 182, 212, 0.3)' },
+          '100%': { boxShadow: '0 0 40px rgba(6, 182, 212, 0.6)' },
         },
-        slide: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        gradient: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-        },
-        shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
-        },
-      },
-      boxShadow: {
-        'glow-sm': '0 0 15px rgba(0, 212, 255, 0.3)',
-        'glow-md': '0 0 30px rgba(0, 212, 255, 0.4)',
-        'glow-lg': '0 0 50px rgba(0, 212, 255, 0.5)',
-        'glow-purple': '0 0 30px rgba(168, 85, 247, 0.4)',
-        'soft-xl': '0 20px 50px -12px rgba(0, 0, 0, 0.5)',
-        'inner-glow': 'inset 0 0 20px rgba(0, 212, 255, 0.1)',
       },
       backdropBlur: {
         xs: '2px',
@@ -94,5 +81,5 @@ const config: Config = {
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
